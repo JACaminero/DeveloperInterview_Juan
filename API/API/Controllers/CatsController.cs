@@ -24,5 +24,11 @@ namespace API.Controllers
         {
             return await _dataService.GetCat();
         }
+
+        [HttpGet("{n}")]
+        public async Task<IEnumerable<Cat>> GetN(int n)
+        {
+            return await _dataService.GetNCats(n);
+        }
     }
 }
