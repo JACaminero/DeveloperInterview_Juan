@@ -1,0 +1,36 @@
+
+.item {
+  color: white;
+  /* padding: 1rem; */
+  height: 200px;
+  width: 200px;
+}
+
+/* .tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 60px; 
+  overflow-y: scroll;
+  align-items: center;
+  justify-content: center;
+} */
+
+.tags::-webkit-scrollbar {
+  display: none;
+}
+
+.tag-child {
+  flex-grow: 1; 
+  flex-shrink: 1; 
+  flex-basis: 33%; 
+  /* height: 100px; */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: black;
+  border-width: .7px;
+}

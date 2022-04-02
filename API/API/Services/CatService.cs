@@ -40,7 +40,7 @@ namespace API.Services
         public async Task<IEnumerable<Cat>> GetNCats(int n)
         {
 
-            var response = await _httpClient.GetAsync($"cats?tags=tag1,tag2&skip=0&limit={n}");
+            var response = await _httpClient.GetAsync($"api/cats?skip=0&limit={n}");
             response.EnsureSuccessStatusCode();
 
             using var responseStream = response.Content.ReadAsStreamAsync();

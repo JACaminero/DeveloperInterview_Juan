@@ -1,7 +1,8 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import CatService from './services/CatService.js'; //divided logic in services so indivualcomponents are easier to understand
-import { CompanyService } from './services/CompanyService';
+import CompanyService from './services/CompanyService.js';
+import CatCard from './components/cat-card-component/CatCard';
 
 function App() {
   //NOTE: had problems with CORS so I modified the backend to allow API calls from all origins 
@@ -29,16 +30,17 @@ function App() {
           href={`https://www.google.com/search?q=${companyName}`}>
           <h1>{companyName}</h1>
         </a>
-        <div className='art'>{
+        {/* <div className='art'>{
           tags == '' ? 'No hay tags para este gatito :(' : tags
-        }</div> 
+        }</div>  */}
         <div className="container">
           {
             catDataList.map( ({ id, url, tags }) => {
               return (
-                <>
-                  <img className="item" key={id} src={`https://cataas.com/${url}`} onClick={ () => setTag(ts => ts = tags) } />
-                </>
+                <CatCard catData={ { id: id, url: url, tags: tags } } />
+                // <>
+                //   <img className="item" key={id} src={`https://cataas.com/${url}`} onClick={ () => setTag(ts => ts = tags) } />
+                // </>
               )
             })
           }
